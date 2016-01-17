@@ -8,7 +8,7 @@ public class Rating {
 
         private int userId;
         private int movieId;
-        private double rating;
+        private Float rating;
 
 
 
@@ -22,11 +22,11 @@ public class Rating {
             return this.create(
                     Integer.parseInt(data.get(0)),
                     Integer.parseInt(data.get(1)),
-                    Double.parseDouble(data.get(2))
+                    Float.parseFloat(data.get(2))
 
             );
         }
-    public Rating create(int userId, int movieId, double rating) {
+    public Rating create(int userId, int movieId, Float rating) {
             this.setUserId(userId);
             this.setMovieId(movieId);
             this.setRating(rating);
@@ -43,6 +43,8 @@ public class Rating {
             sb.append('}');
             return sb.toString();
         }
+
+
 
     public int getUserId() {
         return userId;
@@ -65,7 +67,7 @@ public class Rating {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(Float rating) {
         this.rating = rating;
     }
 
